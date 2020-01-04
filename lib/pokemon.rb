@@ -26,7 +26,7 @@ class Pokemon
 
     sample = db.execute(sql, id).collect do |pokemon|
       # binding.pry
-      Pokemon.new(name: pokemon[1], type: pokemon[2], db: db)
+      Pokemon.new(pokemon[0], pokemon[1], pokemon[2], db)
     end.first
     binding.pry
   end
