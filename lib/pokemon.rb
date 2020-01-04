@@ -28,7 +28,7 @@ class Pokemon
       # binding.pry
       Pokemon.new(id: pokemon[0], name: pokemon[1], type: pokemon[2], db: db)
     end.first
-
+    binding.pry
   end
 
 end
