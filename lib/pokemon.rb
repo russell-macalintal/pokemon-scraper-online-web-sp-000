@@ -1,3 +1,5 @@
+require 'pry'
+
 class Pokemon
   attr_accessor :id, :name, :type, :db
 
@@ -23,6 +25,7 @@ class Pokemon
       SQL
 
     db.execute(sql, id).collect do |pokemon|
+      binding.pry
       Pokemon.new(id: pokemon[0], name: pokemon[1], type: pokemon[2], db: db)
     end.first
 
