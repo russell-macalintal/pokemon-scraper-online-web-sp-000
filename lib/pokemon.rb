@@ -24,11 +24,9 @@ class Pokemon
       SELECT * FROM pokemon WHERE id = ?
       SQL
 
-    sample = db.execute(sql, id).collect do |pokemon|
-      # binding.pry
+    db.execute(sql, id).collect do |pokemon|
       Pokemon.new(id: pokemon[0], name: pokemon[1], type: pokemon[2], db: db)
     end.first
-    binding.pry
   end
 
 end
